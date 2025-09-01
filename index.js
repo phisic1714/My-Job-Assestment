@@ -1,3 +1,6 @@
+const gsheetAPI =
+  "https://script.google.com/macros/s/AKfycbwU5RXLmLWjCA7nBjSHbNGrObhP6v6ak-afnrPj6QnX_xUuubvk73I4iuxU2nj27tGZJA/exec";
+
 const dropdown = document.getElementById("module");
 const list = document.getElementById("list");
 const addBtn = document.getElementById("add");
@@ -23,7 +26,6 @@ function fillSelectOptions(selectEl) {
   });
 }
 
-
 // เพิ่มแถวใหม่
 addBtn.addEventListener("click", () => {
   const node = tmpl.content.firstElementChild.cloneNode(true);
@@ -38,7 +40,6 @@ function updateRowIndex(row, index) {
   });
 }
 
-
 // ลบแถว (ใช้ event delegation)
 list.addEventListener("click", (e) => {
   if (e.target.classList.contains("remove")) {
@@ -47,7 +48,6 @@ list.addEventListener("click", (e) => {
     Array.from(list.children).forEach((row, i) => updateRowIndex(row, i));
   }
 });
-
 
 // ส่งฟอร์ม (เดโม: ป้องกันส่งจริง แล้วแปลงค่าเป็น array มาแสดงผล)
 form.addEventListener("submit", (e) => {
@@ -67,8 +67,8 @@ form.addEventListener("submit", (e) => {
 
   const itemsArray = Object.values(entries);
   console.log("itemsArray:", itemsArray);
-
-  // ถ้าจะส่งจริงไปเซิร์ฟเวอร์ ให้เอา e.preventDefault() ออก
-  // หรือใช้ fetch:
-  // fetch(form.action, { method: 'POST', body: fd });
+  fetch(
+    "https://script.google.com/macros/s/AKfycbwU5RXLmLWjCA7nBjSHbNGrObhP6v6ak-afnrPj6QnX_xUuubvk73I4iuxU2nj27tGZJA/exec",
+    { method: "POST", body: itemsArray }
+  );
 });

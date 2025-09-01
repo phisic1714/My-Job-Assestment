@@ -45,18 +45,19 @@
     <form id="dynamicForm" action="/your-endpoint" method="POST">
       <div id="list">
         <!-- เริ่มต้นมี 1 ช่อง -->
-        <div class="row" style="flex-direction: column">
+        <div class="row" style="flex-direction: row">
           <select
-            name="items[0][module]"
+            name="items[0][Module]"
             class="module-select"
             style="width: 50%"
           ></select>
-          <input
-            name="items[0][desc]"
+          <textarea
+            name="items[0][Desc]"
             type="text"
             placeholder="ใส่ค่า..."
             style="width: 50%"
-          />
+            rows="2"
+          ></textarea>
           <button type="button" class="remove" aria-label="ลบแถว">ลบ</button>
         </div>
       </div>
@@ -76,18 +77,25 @@
 
     <!-- เทมเพลตของแถวใหม่ -->
     <template id="row-template">
-      <div class="row" style="flex-direction: column">
-        <select
-          name="items[0][module]"
-          class="module-select"
-          style="width: 50%"
-        ></select>
-        <input
-          name="items[0][desc]"
-          type="text"
-          placeholder="ใส่ค่า..."
-          style="width: 50%"
-        />
+      <div class="row" style="display: flex; flex-direction: row; gap: 16px">
+        <div
+          class="field"
+          style="display: flex; flex-direction: column; width: 50%"
+        >
+          <label>ระบบ</label>
+          <select name="items[0][Module]" class="module-select"></select>
+        </div>
+        <div
+          class="field"
+          style="display: flex; flex-direction: column; width: 50%"
+        >
+          <label>รายละเอียด</label>
+          <textarea
+            name="items[0][Desc]"
+            placeholder="ใส่ค่า..."
+            rows="2"
+          ></textarea>
+        </div>
         <button type="button" class="remove" aria-label="ลบแถว">ลบ</button>
       </div>
     </template>
