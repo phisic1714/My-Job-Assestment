@@ -45,8 +45,18 @@
     <form id="dynamicForm" action="/your-endpoint" method="POST">
       <div id="list">
         <!-- เริ่มต้นมี 1 ช่อง -->
-        <div class="row">
-          <input name="items[]" type="text" placeholder="ใส่ค่า..." />
+        <div class="row" style="flex-direction: column">
+          <select
+            name="items[0][module]"
+            class="module-select"
+            style="width: 50%"
+          ></select>
+          <input
+            name="items[0][desc]"
+            type="text"
+            placeholder="ใส่ค่า..."
+            style="width: 50%"
+          />
           <button type="button" class="remove" aria-label="ลบแถว">ลบ</button>
         </div>
       </div>
@@ -58,7 +68,7 @@
 
       <div class="note">
         หมายเหตุ: ฟิลด์ใช้ชื่อ
-        <code>items[]</code> เพื่อให้ฝั่งเซิร์ฟเวอร์รับเป็นอาร์เรย์อัตโนมัติ
+        <code>items</code> เพื่อให้ฝั่งเซิร์ฟเวอร์รับเป็นอาร์เรย์อัตโนมัติ
       </div>
     </form>
 
@@ -66,54 +76,22 @@
 
     <!-- เทมเพลตของแถวใหม่ -->
     <template id="row-template">
-      <div class="row">
-        <input name="items[]" type="text" placeholder="ใส่ค่า..." />
+      <div class="row" style="flex-direction: column">
+        <select
+          name="items[0][module]"
+          class="module-select"
+          style="width: 50%"
+        ></select>
+        <input
+          name="items[0][desc]"
+          type="text"
+          placeholder="ใส่ค่า..."
+          style="width: 50%"
+        />
         <button type="button" class="remove" aria-label="ลบแถว">ลบ</button>
       </div>
     </template>
 
-    <script>
-      const list = document.getElementById("list");
-      const addBtn = document.getElementById("add");
-      const form = document.getElementById("dynamicForm");
-      const tmpl = document.getElementById("row-template");
-      const preview = document.getElementById("preview");
-
-      // เพิ่มแถวใหม่
-      addBtn.addEventListener("click", () => {
-        const node = tmpl.content.firstElementChild.cloneNode(true);
-        list.appendChild(node);
-      });
-
-      // ลบแถว (ใช้ event delegation)
-      list.addEventListener("click", (e) => {
-        if (e.target.classList.contains("remove")) {
-          const row = e.target.closest(".row");
-          // กันไว้ไม่ให้ลบจนไม่เหลือช่องเลย
-          if (list.children.length > 1) row.remove();
-        }
-      });
-
-      // ส่งฟอร์ม (เดโม: ป้องกันส่งจริง แล้วแปลงค่าเป็น array มาแสดงผล)
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        // เก็บเป็น array ด้วย FormData
-        const fd = new FormData(form);
-        const items = fd
-          .getAll("items[]")
-          .map((v) => v.trim())
-          .filter((v) => v !== "");
-
-        // แสดงผลให้ดู
-        preview.hidden = false;
-        preview.textContent = "Array ที่ได้: " + JSON.stringify(items, null, 2);
-        console.log("items array =>", items);
-
-        // ถ้าจะส่งจริงไปเซิร์ฟเวอร์ ให้เอา e.preventDefault() ออก
-        // หรือใช้ fetch:
-        // fetch(form.action, { method: 'POST', body: fd });
-      });
-    </script>
+    <script src="index.js" />
   </body>
 </html>

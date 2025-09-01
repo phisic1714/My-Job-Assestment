@@ -1,0 +1,77 @@
+{
+  "Modules": [
+    { "value": 1, "label": "1.งานประชาสัมพันธ์" },
+    { "value": 2, "label": "2.งานเวชระเบียน" },
+    { "value": 3, "label": "3.ศูนย์ตรวจสอบสิทธิ" },
+    { "value": 4, "label": "4.ศูนย์รับผู้ป่วยใน" },
+    { "value": 5, "label": "5.ศูนย์รับ-ส่งตัวผู้ป่วย" },
+    { "value": 6, "label": "6.งานเวชสถิติ" },
+    { "value": 7, "label": "7.งานผู้ป่วยนอก" },
+    { "value": 8, "label": "8.งานนัดหมาย" },
+    { "value": 9, "label": "9.ทันตกรรม" },
+    { "value": 10, "label": "10.ห้องตรวจแพทย์" },
+    { "value": 11, "label": "11.หอผู้ป่วย" },
+    { "value": 12, "label": "12.ห้องปฏิบัติการ" },
+    { "value": 13, "label": "13.ห้องเอกซเรย์" },
+    { "value": 14, "label": "14.ห้องยาผู้ป่วยนอก" },
+    { "value": 15, "label": "15.ห้องยาผู้ป่วยใน" },
+    { "value": 16, "label": "16.งานทะเบียนยา" },
+    { "value": 17, "label": "17.งานแพ้ยา" },
+    { "value": 18, "label": "18.ห้องผ่าตัด" },
+    { "value": 19, "label": "19.โภชนาการ" },
+    { "value": 20, "label": "20.การเงินผู้ป่วยนอก" },
+    { "value": 21, "label": "21.การเงินผู้ป่วยใน" },
+    { "value": 22, "label": "22.งานเรียกเก็บ" },
+    { "value": 23, "label": "23.สังคมสงเคราะห์" },
+    { "value": 24, "label": "24.งานผู้ดูแลระบบ" },
+    { "value": 25, "label": "25.คลังยาและวัสดุ" },
+    { "value": 26, "label": "26.งานเวชศาสตร์นิวเคลียร์" },
+    { "value": 27, "label": "27.งานกายภาพบำบัด" },
+    { "value": 28, "label": "28.ระบบงานเคมีบำบัด" },
+    { "value": 29, "label": "29.งานทะเบียนมะเร็ง" },
+    { "value": 30, "label": "30.งานทะเบียนอุบัติเหตุ" },
+    { "value": 31, "label": "31.งานควบคุมโรคติดเชื้อ" },
+    { "value": 32, "label": "32.ระบบงานจ่ายกลาง" },
+    { "value": 33, "label": "33.ระบบงานธนาคารเลือด" },
+    { "value": 34, "label": "34.งานห้องตรวจสุขภาพ" },
+    { "value": 35, "label": "35.งานบริหารความเสี่ยง" },
+    { "value": 36, "label": "36.ระบบข้อมูลเพื่อการจัดการ" },
+    { "value": 38, "label": "38.ระบบงานคัดกรอง" },
+    { "value": 42, "label": "42.งานเวชกรรมสังคม" },
+    { "value": 44, "label": "44.ระบบงานไตเทียม" },
+    { "value": 46, "label": "46.ระบบงานวิสัญญี" },
+    { "value": 48, "label": "48.งานพยาธิวิทยา" },
+    { "value": 56, "label": "56.ระบบทะเบียนผู้มีอุปการคุณ" },
+    { "value": 57, "label": "57.ระบบงานบริหารเตียง" },
+    { "value": 59, "label": "59.งานจัดการเอกสาร" },
+    { "value": 60, "label": "60.ระบบงานแพทย์แผนไทย" },
+    { "value": 64, "label": "64.ระบบงานแพทย์ผู้ป่วยใน IPD Round Ward" },
+    { "value": 75, "label": "75.งานคิว" },
+    { "value": 79, "label": "79.ระบบงานศูนย์เปล" },
+    { "value": 80, "label": "80.ระบบงานจิตเวช" },
+    { "value": 81, "label": "81.ระบบงานเยี่ยมบ้าน" },
+    { "value": 100, "label": "100.Log" },
+    { "value": 99, "label": "99.ระบบงานส่งเบิก" },
+    { "value": 101, "label": "Form Report" },
+    { "value": 102, "label": "IPD ROUNDWARD" }
+  ],
+  "JobType": [
+    { "value": "GAP", "label": "GAP" },
+    { "value": "Defect", "label": "Defect" },
+    { "value": "CR-Standard", "label": "CR-Standard" }
+  ],
+  "Gsheet": [
+    {
+      "value": "https://docs.google.com/spreadsheets/d/1jPj-XEjaghk6PZbAfzNv5WOgMcj-s4u7L172zl9iWpg/edit?gid=715822073#gid=715822073&fvid=2023972568",
+      "label": "PANACEA"
+    },
+    {
+      "value": "https://docs.google.com/spreadsheets/d/1jPj-XEjaghk6PZbAfzNv5WOgMcj-s4u7L172zl9iWpg/edit?gid=1049441132#gid=1049441132",
+      "label": "IPD ROUNDWARD"
+    },
+    {
+      "value": "https://docs.google.com/spreadsheets/d/1m2eGSXqwKiE4ySfqww-_uI3fXklHOXF0jVvWo_NlIX4/edit?pli=1&gid=1274064310#gid=1274064310",
+      "label": "Form Report"
+    }
+  ]
+}
