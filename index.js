@@ -67,8 +67,14 @@ form.addEventListener("submit", (e) => {
 
   const itemsArray = Object.values(entries);
   console.log("itemsArray:", itemsArray);
-  fetch(
-    "https://script.google.com/macros/s/AKfycbwU5RXLmLWjCA7nBjSHbNGrObhP6v6ak-afnrPj6QnX_xUuubvk73I4iuxU2nj27tGZJA/exec",
-    { method: "POST", body: itemsArray }
-  );
+  fetch("http://localhost:3000/api", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(itemsArray)
+  })
+    .then(res => res.text())
+    .then(data => console.log("Response:", data))
+    .catch(err => console.error("Error:", err));
+
+
 });
